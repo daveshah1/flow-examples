@@ -1,0 +1,16 @@
+# nextpnr out-of-context flow
+
+This demonstrates a flow that places and routes a small picorv32 SoC
+"out-of-context" - i.e. with no IO or global buffer insertion - and
+saves it as a place-and-routed JSON that can then be used as a 
+"hardened" submodule.
+
+This submodule is then used in a larger module that adds a firmware
+ROM, some IO and a PLL. This means changes to any of these three
+parts do not necessitate a full rebuild of the picorv32.
+
+Currently there is one example for the ECP5 Versa-5G evaluation board.
+Run `make prog` to build all parts and program the board using openocd.
+Connect to the serial at 9600 baud, type a message, and it should be
+scrolled on the 14-seg display after pressing Enter.
+
