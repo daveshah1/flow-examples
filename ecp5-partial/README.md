@@ -2,7 +2,7 @@
 
 Run `make prog` to program the base bitstream
 
-Run `make prog_delta` to program the delta bitstream that connected LED D25 to counter bit 26
+Run `make prog_delta` to program the delta bitstream that connects LED D25 to counter bit 26
 
 Run `make prog_unload` to unload the delta bitstream by programming the reverse change
 
