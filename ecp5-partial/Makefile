@@ -18,7 +18,7 @@ prog: ${PROJ}.svf
 	openocd -f ecp5-versa5g.cfg -c "transport select jtag; init; svf $<; exit"
 
 ${PROJ}_1_out.config: ${PROJ}_out.config make_connection.py
-	nextpnr-ecp5 --json ${PROJ}_pnr.json --no-place --lpf ${CONSTR} --textcfg $@ --pre-pack make_connection.py
+	nextpnr-ecp5 --json ${PROJ}_pnr.json --no-place --lpf ${CONSTR} --textcfg $@ --pre-pack make_connection.py --um5g-45k --package CABGA381
 
 
 ${PROJ}_delta.bit: ${PROJ}_out.config ${PROJ}_1_out.config
